@@ -25,16 +25,17 @@ import com.mattkawalec.domain.Product;
 public class MainFrame extends JFrame {
 	
 	
-	ButtonsPanel buttonsPanel;
+	ControlPanel controlPanel;
 	Container c;
-	JMenuBar menuBar;
-	JMenu menu;
-	JMenuItem menuItem;
-	JPanel productListPanel;
-	JPanel productButtonsPanel;
-	JPanel recipeButtonsPanel;
-	Object[] tempRow;
+	//JMenuBar menuBar;
+	//JMenu menu;
+	//JMenuItem menuItem;
+	//JPanel productListPanel;
+	//JPanel productButtonsPanel;
+	//JPanel recipeButtonsPanel;
+	
 	TablePanel tablePanel;
+	ButtonsTablePanel buttonsTablePanel;
 
 
 	public MainFrame() {
@@ -47,15 +48,20 @@ public class MainFrame extends JFrame {
 		 */
 
 		tablePanel = new TablePanel(this);
-		buttonsPanel = new ButtonsPanel(tablePanel);
-		c.add(buttonsPanel, BorderLayout.NORTH);
+		controlPanel = new ControlPanel(tablePanel);
+		buttonsTablePanel = new ButtonsTablePanel();
+		
+		c.add(controlPanel, BorderLayout.NORTH);
 		c.add(tablePanel, BorderLayout.CENTER);
+		c.add(buttonsTablePanel, BorderLayout.SOUTH);
 
 		setTitle("Production Module Client");
 		setSize(600, 600);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		tablePanel.setVisible(true);
+		//pack();
 	}
 
 

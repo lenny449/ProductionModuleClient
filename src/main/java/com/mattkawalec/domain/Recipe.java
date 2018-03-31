@@ -1,17 +1,34 @@
 package com.mattkawalec.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Recipe {
 
+public class Recipe {
 	String recipeId;
 	String fullName;
 	String resultProductId;
 	double workHours;
 
+
 	List<ProductQuantityPair> recipeList;
+	
+	public List<Object> getElementsList() {
+		List<Object> elementsList = new ArrayList<>();
+		elementsList.add(this.recipeId);
+		elementsList.add(this.fullName);
+		elementsList.add(this.resultProductId);
+		elementsList.add(this.workHours);
+		elementsList.add(this.recipeList);
+		return elementsList;
+	}
+	
+	public String[] getLocalNames() {
+		String[] localNames = {"Id", "Nazwa", "Produkt końcowy", "Roboczogodziny"};
+		return localNames;
+	}
 	
 	public Recipe() {
 		super();

@@ -1,19 +1,34 @@
 package com.mattkawalec.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class Document {
 	public enum TypeOfTransaction {RW, PW, WZ, PZ};
-
+	
 	String documentId;
 	String description;
 	String createDate;
 	TypeOfTransaction typeOfTransaction;
-
+	
 	List<ProductQuantityPair> recipeList;	
+	
+	public List<Object> getElementsList() {
+		List<Object> elementsList = new ArrayList<>();
+		elementsList.add(this.documentId);
+		elementsList.add(this.typeOfTransaction);
+		elementsList.add(this.description);
+		elementsList.add(this.createDate);
+		elementsList.add(this.recipeList);
+		return elementsList;
+	}
+	
+	public String[] getLocalNames() {
+		String[] localNames = {"Id", "Typ dokumentu", "Opis",  "Data utworzenia"};
+		return localNames;
+	}
 	
 	public Document() {
 		super();

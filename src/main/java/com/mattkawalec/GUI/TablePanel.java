@@ -7,7 +7,9 @@ import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -20,50 +22,45 @@ import com.mattkawalec.domain.Product;
 import com.mattkawalec.domain.Recipe;
 
 public class TablePanel extends JPanel {
-
-	JTable table;
+	Container c;
 	DefaultTableModel dTableModel;
+	JTable table;	
 	JScrollPane scrollPane;
 	Object[][] productsDatabase;
 	Object[][] recipeDatabase;
 	Object[][] documentsDatabase;
 	MainFrame mainFrame;
-	Container c;
+	
 
 	public TablePanel(MainFrame extendMainFrame) {
 		super();
-
-		mainFrame = extendMainFrame;
 		setLayout(new BorderLayout());
-		T.t("sdas");
+		mainFrame = extendMainFrame;
+		
 	}
 
 	public void createProductsTable(List<Product> productsList) {
-		removeAll();
-		
-		
-		
-		
+		removeAll();		
 		String[] columnNames = { "ID", "NAZWA", "ILOSC", "CENA" };
 		dTableModel = new DefaultTableModel(productsDatabase, columnNames);
 		table = new JTable(dTableModel);
-		addProductRows(productsList);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
-		// table.setFillsViewportHeight(true);
+		//table.setFillsViewportHeight(true);
+		addProductRows(productsList);
 		scrollPane = new JScrollPane(table);
-		add(scrollPane, BorderLayout.CENTER);
+		add(scrollPane, BorderLayout.NORTH);
 		mainFrame.setVisible(true);
+
 	}
 
 	public void createRecipeTable(List<Recipe> recipeList) {
-		removeAll();
-		
-		
+		removeAll();	
 		String[] columnNames = { "ID", "NAZWA", "PRODUCT KOÑCOWY", "ROBOCZO-GODZINY" };
 		dTableModel = new DefaultTableModel(recipeDatabase, columnNames);
 		table = new JTable(dTableModel);
-		addRecipeRows(recipeList);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
+		//table.setFillsViewportHeight(true);
+		addRecipeRows(recipeList);
 		scrollPane = new JScrollPane(table);
 		add(scrollPane, BorderLayout.CENTER);
 		mainFrame.setVisible(true);
@@ -71,11 +68,13 @@ public class TablePanel extends JPanel {
 	}
 
 	public void createDocumentsTable(List<Document> documentsList) {
+		removeAll();
 		String[] columnNames = { "ID", "TYP DOKUMENTU", "OPIS", "DATA" };
 		dTableModel = new DefaultTableModel(documentsDatabase, columnNames);
 		table = new JTable(dTableModel);
-		addDocumentsRows(documentsList);
+		//table.setFillsViewportHeight(true);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
+		addDocumentsRows(documentsList);
 		scrollPane = new JScrollPane(table);
 		add(scrollPane, BorderLayout.CENTER);
 		mainFrame.setVisible(true);

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -15,7 +16,7 @@ import com.mattkawalec.GUI.MainFrame;
 import com.mattkawalec.connection.ConnectionClient;
 import com.mattkawalec.domain.Product;
 
-public class ButtonsPanel extends JPanel {
+public class ControlPanel extends JPanel {
 	ConnectionClient connectionClient;
 	
 	JButton productsButton;
@@ -25,16 +26,20 @@ public class ButtonsPanel extends JPanel {
 	
 
 	
-	public ButtonsPanel(TablePanel externalTablePanel) {
+	public ControlPanel(TablePanel externalTablePanel) {
 		super();
 		
 		connectionClient = new ConnectionClient();
 		
 		tablePanel = externalTablePanel;
 		
-		productsButton = new JButton("TOWARY");
-		recipeButton = new JButton("RECEPTURY");
-		documentsButton = new JButton("DOKUMENTY");
+		ImageIcon productIcon = new ImageIcon("src/main/resources/product_icon.png");
+		ImageIcon recipeIcon = new ImageIcon("src/main/resources/recipe_icon.png");
+		ImageIcon documentIcon = new ImageIcon("src/main/resources/document_icon.png");
+		
+		productsButton = new JButton("TOWARY", productIcon);
+		recipeButton = new JButton("RECEPTURY", recipeIcon);
+		documentsButton = new JButton("DOKUMENTY", documentIcon);
 		
 		productsButton.addActionListener(new productsButtonListener());
 		recipeButton.addActionListener(new recipeButtonListener());
@@ -45,7 +50,7 @@ public class ButtonsPanel extends JPanel {
 		add(documentsButton);
 		
 		setBorder(BorderFactory.createTitledBorder("Sterowanie"));
-		Dimension size = getPreferredSize();
+		//Dimension size = getPreferredSize();
 		//size.height = 60;
 		//setPreferredSize(size);
 		
@@ -56,7 +61,7 @@ public class ButtonsPanel extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-						
+			T.t("jestem w action performed");
 			tablePanel.createProductsTable(connectionClient.getAllProducts());
 		} 
 	}

@@ -1,13 +1,29 @@
 package com.mattkawalec.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Product {
-	//@GeneratedValue
+
 	private String productId;
 	private String fullName;
 	private double quantity;
 	private double price;
+	
+	public List<Object> getElementsList() {
+		List<Object> elementsList = new ArrayList<>();
+		elementsList.add(this.productId);
+		elementsList.add(this.fullName);
+		elementsList.add(this.quantity);
+		elementsList.add(this.price);
+		return elementsList;
+	}
+	
+	public String[] getLocalNames() {
+		String[] localNames = {"Id", "Nazwa", "Ilość", "Koszt"};
+		return localNames;
+	}
 	
 	public Product() {
 		super();
@@ -20,6 +36,8 @@ public class Product {
 		this.quantity = quantity;
 		this.price = price;
 	}
+	
+
 
 	public String getProductId() {
 		return productId;
@@ -52,7 +70,5 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
-	
 	
 }
