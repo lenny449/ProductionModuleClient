@@ -3,6 +3,7 @@ package com.mattkawalec.domain;
 
 
 public class Product {
+	//@GeneratedValue
 	private String productId;
 	private String fullName;
 	private double quantity;
@@ -10,13 +11,6 @@ public class Product {
 	
 	public Product() {
 		super();
-	}
-
-	public Product(String fullName, double quantity, double price) {
-		super();
-		this.fullName = fullName;
-		this.quantity = quantity;
-		this.price = price;
 	}
 
 	public Product(String productId, String fullName, double quantity, double price) {
@@ -58,7 +52,7 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
 	
 	
 }
