@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Recipe {
+public class Recipe extends ElementOfDatabase{
 	String recipeId;
 	String fullName;
 	String resultProductId;
@@ -25,7 +25,7 @@ public class Recipe {
 		return elementsList;
 	}
 	
-	public String[] getLocalNames() {
+	public static String[] getLocalNames() {
 		String[] localNames = {"Id", "Nazwa", "Produkt końcowy", "Roboczogodziny"};
 		return localNames;
 	}

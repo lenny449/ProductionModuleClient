@@ -61,7 +61,6 @@ public class ControlPanel extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			T.t("jestem w action performed");
 			tablePanel.createProductsTable(connectionClient.getAllProducts());
 		} 
 	}
@@ -70,9 +69,7 @@ public class ControlPanel extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			tablePanel.createRecipeTable(connectionClient.getAllRecipe());
-			
-			
+			tablePanel.createRecipeTable(connectionClient.getAllRecipe());	
 		} 
 	}
 	

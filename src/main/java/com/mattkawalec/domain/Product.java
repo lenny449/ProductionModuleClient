@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Product {
+public class Product extends ElementOfDatabase{
 
 	private String productId;
 	private String fullName;
@@ -20,8 +20,8 @@ public class Product {
 		return elementsList;
 	}
 	
-	public String[] getLocalNames() {
-		String[] localNames = {"Id", "Nazwa", "IloÅ›Ä‡", "Koszt"};
+	public static String[] getLocalNames() {
+		String[] localNames = {"Id", "Nazwa", "Iloœæ", "Koszt"};
 		return localNames;
 	}
 	

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Document {
+public class Document extends ElementOfDatabase{
 	public enum TypeOfTransaction {RW, PW, WZ, PZ};
 	
 	String documentId;
@@ -25,7 +25,7 @@ public class Document {
 		return elementsList;
 	}
 	
-	public String[] getLocalNames() {
+	public static String[] getLocalNames() {
 		String[] localNames = {"Id", "Typ dokumentu", "Opis",  "Data utworzenia"};
 		return localNames;
 	}

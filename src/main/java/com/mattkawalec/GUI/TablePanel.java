@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 import com.mattkawalec.T;
 import com.mattkawalec.connection.ConnectionClient;
 import com.mattkawalec.domain.Document;
+import com.mattkawalec.domain.ElementOfDatabase;
 import com.mattkawalec.domain.Product;
 import com.mattkawalec.domain.Recipe;
 
@@ -37,11 +38,65 @@ public class TablePanel extends JPanel {
 		setLayout(new BorderLayout());
 		mainFrame = extendMainFrame;
 		
+		//TEST
+		test(new Product());
+		
 	}
 
-	public void createProductsTable(List<Product> productsList) {
+	public void createTable(List<ElementOfDatabase> elementOfDatabaseList, ElementOfDatabase eod) {
 		removeAll();		
-		String[] columnNames = { "ID", "NAZWA", "ILOSC", "CENA" };
+		String[] columnNames;
+		if(eod instanceof Product)
+		{
+			Product tempProduct = (Product)eod;
+			columnNames = tempProduct.getLocalNames();
+		} 
+		else if (eod instanceof Recipe) {
+			Recipe tempRecipe = (Recipe)eod;
+			columnNames = tempRecipe.getLocalNames();
+		} 
+		else if(eod instanceof Document)
+		{
+			Document tempDocument = (Document)eod;
+			columnNames = tempDocument.getLocalNames();
+		}
+			
+		dTableModel = new DefaultTableModel(productsDatabase, columnNames);
+		table = new JTable(dTableModel);
+		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
+		//table.setFillsViewportHeight(true);
+		
+		for(int i = 0; i < elementOfDatabaseList.size(); i++) {
+			elementOfDatabaseList.
+		}
+		dTableModel.addRow(elementOfDatabaseList.get);
+		addProductRows(productsList);
+		scrollPane = new JScrollPane(table);
+		add(scrollPane, BorderLayout.NORTH);
+		mainFrame.setVisible(true);
+
+	}
+	
+	public void test(ElementOfDatabase eod) {
+		T.t("jestem w funkcji test");
+		T.t(eod.getLocalNames());
+		Product p1 = (Product.class) eod;
+		if(eod instanceof Product)
+		{
+			T.t("to jest produkt");
+		}
+		if(eod instanceof ElementOfDatabase)
+		{
+			T.t("to jest ElementOfDatabase");
+		}
+		T.t(eod.getLocalNames());
+
+	}
+	
+	public void createProductsTable(List<Product> productsList) {
+		removeAll();
+		//String[] columnNames = { "ID", "NAZWA", "ILOSC", "CENA" };
+		String[] columnNames = Product.getLocalNames();
 		dTableModel = new DefaultTableModel(productsDatabase, columnNames);
 		table = new JTable(dTableModel);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
@@ -55,28 +110,28 @@ public class TablePanel extends JPanel {
 
 	public void createRecipeTable(List<Recipe> recipeList) {
 		removeAll();	
-		String[] columnNames = { "ID", "NAZWA", "PRODUCT KOÑCOWY", "ROBOCZO-GODZINY" };
+		String[] columnNames = Recipe.getLocalNames();
 		dTableModel = new DefaultTableModel(recipeDatabase, columnNames);
 		table = new JTable(dTableModel);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
 		//table.setFillsViewportHeight(true);
 		addRecipeRows(recipeList);
 		scrollPane = new JScrollPane(table);
-		add(scrollPane, BorderLayout.CENTER);
+		add(scrollPane, BorderLayout.NORTH);
 		mainFrame.setVisible(true);
 
 	}
 
 	public void createDocumentsTable(List<Document> documentsList) {
 		removeAll();
-		String[] columnNames = { "ID", "TYP DOKUMENTU", "OPIS", "DATA" };
+		String[] columnNames = Document.getLocalNames();
 		dTableModel = new DefaultTableModel(documentsDatabase, columnNames);
 		table = new JTable(dTableModel);
 		//table.setFillsViewportHeight(true);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
 		addDocumentsRows(documentsList);
 		scrollPane = new JScrollPane(table);
-		add(scrollPane, BorderLayout.CENTER);
+		add(scrollPane, BorderLayout.NORTH);
 		mainFrame.setVisible(true);
 
 	}
