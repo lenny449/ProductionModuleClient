@@ -15,6 +15,7 @@ import com.mattkawalec.T;
 import com.mattkawalec.GUI.MainFrame;
 import com.mattkawalec.connection.ConnectionClient;
 import com.mattkawalec.domain.Product;
+import com.mattkawalec.domain.Recipe;
 
 public class ControlPanel extends JPanel {
 	ConnectionClient connectionClient;
@@ -54,7 +55,10 @@ public class ControlPanel extends JPanel {
 		//size.height = 60;
 		//setPreferredSize(size);
 		
+		//TEST
+		//ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getProduct("HN"));
 		
+		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(new Recipe());
 	}
 	
 	public class productsButtonListener implements ActionListener {

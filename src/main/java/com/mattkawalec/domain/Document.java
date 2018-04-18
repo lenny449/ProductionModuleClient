@@ -21,7 +21,6 @@ public class Document extends ElementOfDatabase{
 		elementsList.add(this.typeOfTransaction);
 		elementsList.add(this.description);
 		elementsList.add(this.createDate);
-		elementsList.add(this.recipeList);
 		return elementsList;
 	}
 	

@@ -27,15 +27,19 @@ import com.mattkawalec.domain.Product;
 public class ButtonsTablePanel extends JPanel {
 	JButton addObjectButton;
 	JButton deleteObjectButton;
+	JButton editObjectButton;
 
-	public ButtonsTablePanel() {
+	public ButtonsTablePanel(TablePanel tablePanel) {
 		super();
 		
 		ImageIcon addIcon = new ImageIcon("src/main/resources/add_icon.png");
 		ImageIcon deleteIcon = new ImageIcon("src/main/resources/delete_icon.png");
+		ImageIcon editIcon = new ImageIcon("src/main/resources/edit_icon.png");
+		
 		//addObjectButton = new JButton("przycisk");
 		addObjectButton = new JButton("Dodaj", addIcon);
 		deleteObjectButton = new JButton("Usuñ", deleteIcon);
+		editObjectButton = new JButton("Edytuj", editIcon);
 		
 		addObjectButton.addActionListener(new ActionListener() {
 
@@ -56,12 +60,21 @@ public class ButtonsTablePanel extends JPanel {
 			}	
 		}
 		
+		);
 		
-		
+		editObjectButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}	
+		}
 		);
 		
 		add(addObjectButton);
 		add(deleteObjectButton);
+		add(editObjectButton);
 		
 	}
 	

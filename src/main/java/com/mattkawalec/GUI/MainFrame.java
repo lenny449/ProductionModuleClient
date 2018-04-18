@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
 
 		tablePanel = new TablePanel(this);
 		controlPanel = new ControlPanel(tablePanel);
-		buttonsTablePanel = new ButtonsTablePanel();
+		buttonsTablePanel = new ButtonsTablePanel(tablePanel);
 		
 		c.add(controlPanel, BorderLayout.NORTH);
 		c.add(tablePanel, BorderLayout.CENTER);
@@ -62,6 +62,9 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 		tablePanel.setVisible(true);
 		//pack();
+
+		
+		
 	}
 
 

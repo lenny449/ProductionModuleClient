@@ -21,12 +21,11 @@ public class Recipe extends ElementOfDatabase{
 		elementsList.add(this.fullName);
 		elementsList.add(this.resultProductId);
 		elementsList.add(this.workHours);
-		elementsList.add(this.recipeList);
 		return elementsList;
 	}
 	
 	public static String[] getLocalNames() {
-		String[] localNames = {"Id", "Nazwa", "Produkt koÅ„cowy", "Roboczogodziny"};
+		String[] localNames = {"Id", "Nazwa", "Produkt koñcowy", "Roboczogodziny"};
 		return localNames;
 	}
 	
