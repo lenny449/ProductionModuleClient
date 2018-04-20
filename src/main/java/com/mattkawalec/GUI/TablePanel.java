@@ -41,40 +41,6 @@ public class TablePanel extends JPanel {
 		
 		
 	}
-
-/*	public void createTable(List<ElementOfDatabase> elementOfDatabaseList, ElementOfDatabase eod) {
-		removeAll();		
-		String[] columnNames;
-		if(eod instanceof Product)
-		{
-			Product tempProduct = (Product)eod;
-			columnNames = tempProduct.getLocalNames();
-		} 
-		else if (eod instanceof Recipe) {
-			Recipe tempRecipe = (Recipe)eod;
-			columnNames = tempRecipe.getLocalNames();
-		} 
-		else if(eod instanceof Document)
-		{
-			Document tempDocument = (Document)eod;
-			columnNames = tempDocument.getLocalNames();
-		}
-			
-		dTableModel = new DefaultTableModel(productsDatabase, columnNames);
-		table = new JTable(dTableModel);
-		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
-		//table.setFillsViewportHeight(true);
-		
-		for(int i = 0; i < elementOfDatabaseList.size(); i++) {
-			elementOfDatabaseList.
-		}
-		dTableModel.addRow(elementOfDatabaseList.get);
-		addProductRows(productsList);
-		scrollPane = new JScrollPane(table);
-		add(scrollPane, BorderLayout.NORTH);
-		mainFrame.setVisible(true);
-
-	}*/
 	
 	
 	public void createProductsTable(List<Product> productsList) {

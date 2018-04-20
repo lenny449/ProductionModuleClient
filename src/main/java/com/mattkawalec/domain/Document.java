@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Document extends ElementOfDatabase{
-	public enum TypeOfTransaction {RW, PW, WZ, PZ};
+	static public enum TypeOfTransaction {RW, PW, WZ, PZ};
 	
 	String documentId;
 	String description;

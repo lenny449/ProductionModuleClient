@@ -15,6 +15,7 @@ import com.mattkawalec.T;
 import com.mattkawalec.GUI.MainFrame;
 import com.mattkawalec.connection.ConnectionClient;
 import com.mattkawalec.domain.Product;
+import com.mattkawalec.domain.ProductQuantityPair;
 import com.mattkawalec.domain.Recipe;
 
 public class ControlPanel extends JPanel {
@@ -58,7 +59,16 @@ public class ControlPanel extends JPanel {
 		//TEST
 		//ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getProduct("HN"));
 		
-		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(new Recipe());
+		ProductQuantityPair pqp1 = new ProductQuantityPair("HN", 4.0);
+		ProductQuantityPair pqp2 = new ProductQuantityPair("LE", 2.0);
+		List<ProductQuantityPair> listaPQP = new ArrayList<ProductQuantityPair>();
+		listaPQP.add(pqp1);
+		listaPQP.add(pqp2);
+		
+		Recipe r1 = new Recipe("B1", "bimbrowanie", "BIMP1201", 4, listaPQP);
+		//connectionClient.addRecipe(r1);
+		
+		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getRecipe("REC1"));
 	}
 	
 	public class productsButtonListener implements ActionListener {
