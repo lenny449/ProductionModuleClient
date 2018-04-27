@@ -5,9 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Document extends ElementOfDatabase{
+
+
+
+public class Document extends ElementOfDatabase  {
 	static public enum TypeOfTransaction {RW, PW, WZ, PZ};
 	
+
 	String documentId;
 	String description;
 	String createDate;

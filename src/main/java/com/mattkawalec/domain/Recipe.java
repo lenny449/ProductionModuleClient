@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Recipe extends ElementOfDatabase{
+
+
+public class Recipe extends ElementOfDatabase  {
+	
 	String recipeId;
 	String fullName;
 	String resultProductId;

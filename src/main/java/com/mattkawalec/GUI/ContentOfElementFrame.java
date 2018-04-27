@@ -85,6 +85,7 @@ public class ContentOfElementFrame extends JFrame {
 		
 		//Nazwa ramki i wyœwietlenie
 		setTitle(elementList.get(0).toString());
+		setSize(400, 400);
 		setVisible(true);
 		
 	}

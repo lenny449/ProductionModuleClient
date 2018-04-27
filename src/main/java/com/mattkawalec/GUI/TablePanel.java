@@ -67,7 +67,7 @@ public class TablePanel extends JPanel {
 		table.setFillsViewportHeight(true);
 		addRecipeRows(recipeList);
 		scrollPane = new JScrollPane(table);
-		add(scrollPane, BorderLayout.NORTH);
+		add(scrollPane, BorderLayout.CENTER);
 		mainFrame.setVisible(true);
 
 	}
@@ -81,7 +81,7 @@ public class TablePanel extends JPanel {
 		table.setPreferredScrollableViewportSize(new Dimension(500, 50));
 		addDocumentsRows(documentsList);
 		scrollPane = new JScrollPane(table);
-		add(scrollPane, BorderLayout.NORTH);
+		add(scrollPane, BorderLayout.CENTER);
 		mainFrame.setVisible(true);
 
 	}

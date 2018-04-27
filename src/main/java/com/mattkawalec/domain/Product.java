@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Product extends ElementOfDatabase{
 
+
+public class Product extends ElementOfDatabase {
+	
+	//@GeneratedValue
 	private String productId;
 	private String fullName;
 	private double quantity;

@@ -68,7 +68,7 @@ public class ControlPanel extends JPanel {
 		Recipe r1 = new Recipe("B1", "bimbrowanie", "BIMP1201", 4, listaPQP);
 		//connectionClient.addRecipe(r1);
 		
-		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getRecipe("REC1"));
+		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getRecipe("B11"));
 	}
 	
 	public class productsButtonListener implements ActionListener {
