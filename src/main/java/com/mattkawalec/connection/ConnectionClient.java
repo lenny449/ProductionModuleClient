@@ -18,7 +18,7 @@ public class ConnectionClient {
 		client = Client.create();
 	}
 
-	// Function connected with Product.class Objects
+	// Function related with Product.class Objects
 
 	public void addProduct(Product product) {
 		WebResource resource = client.resource("http://localhost:8080/add_product");
@@ -53,7 +53,7 @@ public class ConnectionClient {
 				.put(String.class, product);
 	}
 
-	// Function connected with Recipe.class Objects
+	// Function related with Recipe.class Objects
 
 	public void addRecipe(Recipe recipe) {
 		WebResource resource = client.resource("http://localhost:8080/add_recipe");
@@ -88,7 +88,7 @@ public class ConnectionClient {
 				.put(String.class, recipe);
 	}
 	
-	// Function connected with Document.class Objects
+	// Function related with Document.class Objects
 
 		public void addDocument(Document document) {
 			WebResource resource = client.resource("http://localhost:8080/add_document");

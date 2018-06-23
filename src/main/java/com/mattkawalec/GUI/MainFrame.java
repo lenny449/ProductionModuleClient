@@ -22,6 +22,9 @@ import javax.swing.table.DefaultTableModel;
 import com.mattkawalec.connection.ConnectionClient;
 import com.mattkawalec.domain.Product;
 
+
+// Main frame of app
+
 public class MainFrame extends JFrame {
 	
 	

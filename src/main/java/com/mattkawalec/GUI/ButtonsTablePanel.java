@@ -24,6 +24,8 @@ import com.mattkawalec.GUI.MainFrame;
 import com.mattkawalec.connection.ConnectionClient;
 import com.mattkawalec.domain.Product;
 
+// Component that construct button panel of table
+
 public class ButtonsTablePanel extends JPanel {
 	JButton addObjectButton;
 	JButton deleteObjectButton;

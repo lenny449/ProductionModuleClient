@@ -1,6 +1,7 @@
 package com.mattkawalec.domain;
 
 
+// Class that define pair of a product and quantity - used in other classes
 
 
 public class ProductQuantityPair {

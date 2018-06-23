@@ -5,15 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
+//The Class that defines recipe and ingredients of production 
 
 public class Recipe extends ElementOfDatabase  {
-	
+
 	String recipeId;
 	String fullName;
 	String resultProductId;
-	double workHours;
+	double costOfWorkingHours;
 
 
 	List<ProductQuantityPair> recipeList;
@@ -23,12 +22,12 @@ public class Recipe extends ElementOfDatabase  {
 		elementsList.add(this.recipeId);
 		elementsList.add(this.fullName);
 		elementsList.add(this.resultProductId);
-		elementsList.add(this.workHours);
+		elementsList.add(this.costOfWorkingHours);
 		return elementsList;
 	}
 	
 	public static String[] getLocalNames() {
-		String[] localNames = {"Id", "Nazwa", "Produkt koñcowy", "Roboczogodziny"};
+		String[] localNames = {"Id", "Nazwa", "Produkt koñcowy", "Koszty pracy"};
 		return localNames;
 	}
 	
@@ -36,14 +35,14 @@ public class Recipe extends ElementOfDatabase  {
 		super();
 	}
 
-	public Recipe(String recipeId, String fullName, String resultProductId, double workHours,
-			List<ProductQuantityPair> receipeList) {
+	public Recipe(String recipeId, String fullName, String resultProductId, double costOfWorkingHours,
+			List<ProductQuantityPair> recipeList) {
 		super();
 		this.recipeId = recipeId;
 		this.fullName = fullName;
 		this.resultProductId = resultProductId;
-		this.workHours = workHours;
-		this.recipeList = receipeList;
+		this.costOfWorkingHours = costOfWorkingHours;
+		this.recipeList = recipeList;
 	}
 
 	public String getRecipeId() {
@@ -70,12 +69,12 @@ public class Recipe extends ElementOfDatabase  {
 		this.resultProductId = resultProductId;
 	}
 
-	public double getWorkHours() {
-		return workHours;
+	public double getCostOfWorkingHours() {
+		return costOfWorkingHours;
 	}
 
-	public void setWorkHours(double workHours) {
-		this.workHours = workHours;
+	public void setCostOfWorkingHours(double costOfWorkingHours) {
+		this.costOfWorkingHours = costOfWorkingHours;
 	}
 
 	public List<ProductQuantityPair> getRecipeList() {
@@ -86,6 +85,7 @@ public class Recipe extends ElementOfDatabase  {
 		this.recipeList = recipeList;
 	}
 
+	
 
 
 	

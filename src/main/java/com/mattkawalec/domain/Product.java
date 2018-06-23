@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+//The Class that defines single component or product
 
 public class Product extends ElementOfDatabase {
 	

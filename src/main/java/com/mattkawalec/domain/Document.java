@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 
-
+// The Class that defines income and expense documents 
 
 public class Document extends ElementOfDatabase  {
 	static public enum TypeOfTransaction {RW, PW, WZ, PZ};

@@ -18,6 +18,9 @@ import com.mattkawalec.domain.Product;
 import com.mattkawalec.domain.ProductQuantityPair;
 import com.mattkawalec.domain.Recipe;
 
+
+// Top button panel
+
 public class ControlPanel extends JPanel {
 	ConnectionClient connectionClient;
 	
@@ -68,7 +71,8 @@ public class ControlPanel extends JPanel {
 		Recipe r1 = new Recipe("B1", "bimbrowanie", "BIMP1201", 4, listaPQP);
 		//connectionClient.addRecipe(r1);
 		
-		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getRecipe("B11"));
+		//ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getRecipe("B11"));
+		ContentOfElementFrame contentOfElementFrame = new ContentOfElementFrame(connectionClient.getProduct("TA"));
 	}
 	
 	public class productsButtonListener implements ActionListener {
